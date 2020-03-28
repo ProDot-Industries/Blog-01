@@ -15,8 +15,9 @@ camera = picamera.PiCamera()
 location = "/home/pi/project/captured/%s_video.h264"
 
 #telegram chat id
-chat_id = 621607807
-telegramToken = '1083801231:AAGYB3xo-Tcd3lz_mPI-f1mC1qggzGg_Kvc'
+chat_id = 123456789
+#telegram bot token 
+telegramToken = 'enter your token here'
 
 #file naming
 def remove(string): 
@@ -68,6 +69,7 @@ def sqlReaderWriter():
             db.commit()
 try:
     counter = 1
+    
     #program runs 10000 times to reduce system load, program is restarted through shell script
     while(counter != 10000):
         sqlReaderWriter()

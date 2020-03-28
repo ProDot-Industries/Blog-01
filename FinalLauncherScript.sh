@@ -1,4 +1,6 @@
 echo "script starting"
+mkdir project
+mkdir project/captured
 count=1
 while [ $count -lt 10000 ]
 do
