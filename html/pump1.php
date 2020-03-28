@@ -1,9 +1,5 @@
 <?php
-    $servername = "localhost";
-    $dbname = "Project";
-    $username = "alpha";
-    $password = "alpha";
-    $conn = new mysqli($servername,$username,$password,$dbname);
+    include "config.php";
     if ($conn->connect_error) {
         die("connection failed" . $conn->connect_error);
     }

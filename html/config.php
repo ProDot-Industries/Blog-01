@@ -4,4 +4,5 @@
    define('DB_PASSWORD', 'alpha');
    define('DB_DATABASE', 'Project');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   $conn = new mysqli($servername,$username,$password,$dbname);
 ?>

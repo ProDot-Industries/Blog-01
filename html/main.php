@@ -7,16 +7,12 @@
 		<?php
 			$page = $_SERVER['PHP_SELF'];
 			include "session.php";
+			include "config.php";
 			//page auto refresh time
 			$sec = "10";
 			date_default_timezone_set("Asia/Kolkata");
 			$showTime = date("H:i:s");
 			
-			$servername = "localhost";
-    		$dbname = "Project";
-    		$username = "alpha";
-    		$password = "alpha";
-    		$conn = new mysqli($servername,$username,$password,$dbname);
     		if ($conn->connect_error) {
         		die("connection failed" . $conn->connect_error);
     		}

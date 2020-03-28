@@ -1,8 +1,5 @@
 <?php
-    $servername = "localhost";
-    $username = "alpha";
-    $password = "alpha";
-    $dbname = "Project";
+    include "config.php";
     $apiKeyInternal = "1qaz2wsx3edc";
     $apiKeyExternal = $SensorID = $SensorValue = "";
 
@@ -12,7 +9,7 @@
             $SensorID = test_input($_POST["SensorID"]);
             $SensorValue = test_input($_POST["SensorValue"]);
 
-            $conn = new mysqli($servername,$username,$password,$dbname);
+
             if ($conn->connect_error) {
                 die("connection failed" . $conn->connect_error);
             }

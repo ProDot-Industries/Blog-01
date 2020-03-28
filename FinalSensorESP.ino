@@ -41,11 +41,6 @@ String st;
 String content;
 WiFiClient client;
 
-//Function Decalration
-bool testWifi(void);
-void launchWeb(void);
-void setupAP(void);
-
 //Establishing Local server at port 80 whenever required
 ESP8266WebServer server(80);
 
@@ -175,7 +170,7 @@ void createWebServer() {
     server.on("/", []() {
         IPAddress ip = WiFi.softAPIP();
         String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
-        content = "<!DOCTYPE HTML>\r\n<html>Hello from ESP8266 at ";
+        content = "<!DOCTYPE HTML>\r\n<html>Hello from ESP8266 ";
         content += "<form action=\"/scan\" method=\"POST\"><input type=\"submit\" value=\"scan\"></form>";
         content += ipStr;
         content += "<p>";
@@ -186,7 +181,6 @@ void createWebServer() {
     });
 
     server.on("/scan", []() {
-        //setupAP();
         IPAddress ip = WiFi.softAPIP();
         String ipStr = String(ip[0]) + '.' + String(ip[1]) + '.' + String(ip[2]) + '.' + String(ip[3]);
         content = "<!DOCTYPE HTML>\r\n<html>go back";
@@ -299,7 +293,8 @@ char serverName[100];
 String apiKeyValue = "1qaz2wsx3edc";
 char requestData[] = "apikey%s &SensorID%f &Sensorvalue%f";
 
-void publish() {   
+void publish() {
+    int failCounter = 0;
     for (int i = 0; i < 13; i++) {
         HTTPClient http;
         http.begin(serverName);
@@ -312,6 +307,16 @@ void publish() {
             if (httpResponseCode > 0) {
                 Serial.print("Response Code:");
                 Serial.println(httpResponseCode);
+            }
+            else if (failCounter > 5) {
+                Serial.println("Server Connection Failed too many times.\nClearing EEPROM and Rebooting");
+                ESP.reset();
+            }
+            else if (httpResponseCode == -1) {
+                Serial.print("Error Code:");
+                Serial.println(httpResponseCode);
+                Serial.println("Server Connection Failed");
+                ++failCounter;
             }
             else {
                 Serial.print("Error Code:");
@@ -405,7 +410,7 @@ void setup() {
     Serial.begin(115200); //Initialising if(DEBUG)Serial Monitor
     Serial.println();
     WiFi.disconnect();
-    EEPROM.begin(512); //Initialasing EEPROM
+    EEPROM.begin(150); //Initialasing EEPROM
     delay(10);
     Serial.println("Startup");
 
@@ -491,6 +496,7 @@ void setup() {
         digitalWrite(LEDR,LOW);
 
         Serial.println("Turning the HotSpot On");
+        clearEEPROM();
         launchWeb();
         setupAP();
     }
