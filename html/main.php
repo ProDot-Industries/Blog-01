@@ -7,14 +7,13 @@
 		<?php
 			$page = $_SERVER['PHP_SELF'];
 			include "session.php";
-			include "config.php";
 			//page auto refresh time
 			$sec = "10";
 			date_default_timezone_set("Asia/Kolkata");
 			$showTime = date("H:i:s");
 			
-    		if ($conn->connect_error) {
-        		die("connection failed" . $conn->connect_error);
+    		if ($db->connect_error) {
+        		die("connection failed" . $db->connect_error);
     		}
     		$sql1 = "SELECT * FROM view5 order by `Sensor ID` ASC";
     		$row_Event_ID 		= array (0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -34,7 +33,7 @@
     		$row_Sensor3_Value 	= array (0,0,0,0,0,0,0,0);
 			$row_CurrentTime3 	= array (0,0,0,0,0,0,0,0);
 
-    		if ($result = $conn->query($sql1)) {
+    		if ($result = $db->query($sql1)) {
         		$x = 0;
         		while ($row = $result->fetch_assoc()) {
             		$row_Event_ID[$x] = $row["Event ID"];
@@ -46,7 +45,7 @@
         		$result->free();
 			}
 			
-			if ($result = $conn->query($sql2)) {
+			if ($result = $db->query($sql2)) {
         		$x = 0;
         		while ($row = $result->fetch_assoc()) {
             		$row_Action_ID[$x] = $row["Action ID"];
@@ -58,7 +57,7 @@
         		$result->free();
 			}
 
-			if ($result = $conn->query($sql3)) {
+			if ($result = $db->query($sql3)) {
         		$x = 0;
         		while ($row = $result->fetch_assoc()) {
             		$row_Event3_ID[$x] = $row["Event ID"];

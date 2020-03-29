@@ -10,17 +10,17 @@
             $SensorValue = test_input($_POST["SensorValue"]);
 
 
-            if ($conn->connect_error) {
-                die("connection failed" . $conn->connect_error);
+            if ($db->connect_error) {
+                die("connection failed" . $db->connect_error);
             }
             $sql = "INSERT INTO `EventTable` (`Sensor ID`, `Sensor Value`) VALUES ($SensorID,$SensorValue)";
-            if ($conn->query($sql) === TRUE) {
+            if ($db->query($sql) === TRUE) {
                 echo "new record";
             }
             else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $sql . "<br>" . $db->error;
             }
-            $conn->close();
+            $db->close();
         }
         else {
             echo "Wrong API";
