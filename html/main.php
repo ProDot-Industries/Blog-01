@@ -190,6 +190,22 @@
 						color: white;
 						background-color: #fff2e5;
 						border-radius: 25px;
+						width: 120px;
+					}
+
+					.buttonLogout{
+						border: none;
+						padding: 10px;
+						text-align: center;
+						text-decoration: none;
+						display: inline-block;
+						font-size: 16px;
+						font-color: #ffeb99
+						margin: 4px 2px;
+						cursor: pointer;
+						color: white;
+						background-color: #856c8b;
+						border-radius: 25px;
 						width: 70px;
 					}
 
@@ -200,13 +216,13 @@
 					}
 					.button2{
 						position: absolute;
-						left: 120px;
-						top: 500px;
+						left: 30px;
+						top: 600px;
 					}
 					.button3{
 						position: absolute;
-						left: 210px;
-						top: 500px;
+						left: 30px;
+						top: 700px;
 					}
 					.button6{
 						position: absolute;
@@ -220,8 +236,8 @@
 					}
 					.button4{
 						position: absolute;
-						right: 210px;
-						top: 500px;
+						right: 20px;
+						top: 20px;
 					}
 										
 					@media (max-width: 800px) {
@@ -295,10 +311,10 @@
 			for ($i = 0; $i < 8; $i++) {
 				$htmlElement = "
 							<tr>
-								<td>$row_Action_ID[0]</td>
-								<td>$row_Action_Event[0]</td>
-								<td>$row_Action_Value[0]</td>
-								<td>$row_ActionTime[0]</td>
+								<td>$row_Action_ID[$i]</td>
+								<td>$row_Action_Event[$i]</td>
+								<td>$row_Action_Value[$i]</td>
+								<td>$row_ActionTime[$i]</td>
 							</tr>";
 				echo $htmlElement;
 			}
@@ -307,15 +323,16 @@
 			echo "
 				<div id='smallbudy' class='relative' style='width:300px; height:400px'></div>
 				<div id='smallbudy1' class='relative1' style='width:300px; height:400px'></div>
-				<button class='button button1' ><a color: #2c87f0; href=pump1.php>Toggle Pump 1</button>
+				<button class='button button1' ><a href=pump1.php>Toggle Pump 1</button>
 				<button class='button button2' ><a href=pump2.php>Toggle Pump 2</button>
 				<button class='button button3' ><a href=pump3.php>Toggle Pump 3</button>
+				<button class='buttonLogout button4' ><a href=logout.php>Logout</button>
 				<script>
 					var T = new JustGage({
 						id: 'smallbudy',
 						value:$temp,
 						min: 0,
-						max: 500,
+						max: 100,
 						title: 'Temperature'
 					});
 					var H= new JustGage({
@@ -355,11 +372,5 @@
 			}
 		}
     </script>
-    <div class="form-btn">
-		<button class="submit-btn" >
-			<a href = logout.php> logout </a>
-		</button>
-    </div>
-
 </body>
 </html>
