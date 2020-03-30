@@ -72,6 +72,8 @@
 			$temp = ($row_Sensor_Value[6]+$row_Sensor_Value[7]+$row_Sensor_Value[8])/3;
 			$light = ($row_Sensor_Value[9]+$row_Sensor_Value[10]+$row_Sensor_Value[11]+$row_Sensor_Value[12])/4;
 
+
+
 			echo "
 				<style>
 					a {
@@ -227,207 +229,88 @@
 						.container th:nth-child(4) { display: none; }
 					}
 				</style>
-			</head>
-		<body>
-			<h1> <span class='yellow'></pan></h1>
-			<h2>Monitor & Control Panel</h2>
-			<table class='container'>
-				<thead>
-					<tr>
-						<th><h1>Event ID</h1></th>
-						<th><h1>Sensor ID</h1></th>
-						<th><h1>Sensor Value</h1></th>
-						<th><h1>Time</h1></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>$row_Event_ID[0]</td>
-						<td>$row_Sensor_ID[0]</td>
-						<td>$row_Sensor_Value[0]</td>
-						<td>$row_CurrentTime[0]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[1]</td>
-						<td>$row_Sensor_ID[1]</td>
-						<td>$row_Sensor_Value[1]</td>
-						<td>$row_CurrentTime[1]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[2]</td>
-						<td>$row_Sensor_ID[2]</td>
-						<td>$row_Sensor_Value[2]</td>
-						<td>$row_CurrentTime[2]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[3]</td>
-						<td>$row_Sensor_ID[3]</td>
-						<td>$row_Sensor_Value[3]</td>
-						<td>$row_CurrentTime[3]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[4]</td>
-						<td>$row_Sensor_ID[4]</td>
-						<td>$row_Sensor_Value[4]</td>
-						<td>$row_CurrentTime[4]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[5]</td>
-						<td>$row_Sensor_ID[5]</td>
-						<td>$row_Sensor_Value[5]</td>
-						<td>$row_CurrentTime[5]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[6]</td>
-						<td>$row_Sensor_ID[6]</td>
-						<td>$row_Sensor_Value[6]</td>
-						<td>$row_CurrentTime[6]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[7]</td>
-						<td>$row_Sensor_ID[7]</td>
-						<td>$row_Sensor_Value[7]</td>
-						<td>$row_CurrentTime[7]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[8]</td>
-						<td>$row_Sensor_ID[8]</td>
-						<td>$row_Sensor_Value[8]</td>
-						<td>$row_CurrentTime[8]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[9]</td>
-						<td>$row_Sensor_ID[9]</td>
-						<td>$row_Sensor_Value[9]</td>
-						<td>$row_CurrentTime[9]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[10]</td>
-						<td>$row_Sensor_ID[10]</td>
-						<td>$row_Sensor_Value[10]</td>
-						<td>$row_CurrentTime[10]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[11]</td>
-						<td>$row_Sensor_ID[11]</td>
-						<td>$row_Sensor_Value[11]</td>
-						<td>$row_CurrentTime[11]</td>
-					</tr>
-					<tr>
-						<td>$row_Event_ID[12]</td>
-						<td>$row_Sensor_ID[12]</td>
-						<td>$row_Sensor_Value[12]</td>
-						<td>$row_CurrentTime[12]</td>
-					</tr>
-				</tbody>
-			</table>
-			<table class='container'>
-				<thead>
-					<tr>
-						<th><h1>Event ID</h1></th>
-						<th><h1>Sensor ID</h1></th>
-						<th><h1>Sensor Value</h1></th>
-						<th><h1>Time</h1></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>$row_Event3_ID[0]</td>
-						<td>$row_Sensor3_ID[0]</td>
-						<td>$row_Sensor3_Value[0]</td>
-						<td>$row_CurrentTime3[0]</td>
-					</tr>
-					<tr>
-						<td>$row_Event3_ID[1]</td>
-						<td>$row_Sensor3_ID[1]</td>
-						<td>$row_Sensor3_Value[1]</td>
-						<td>$row_CurrentTime3[1]</td>
-					</tr>
-					<tr>
-						<td>$row_Event3_ID[2]</td>
-						<td>$row_Sensor3_ID[2]</td>
-						<td>$row_Sensor3_Value[2]</td>
-						<td>$row_CurrentTime3[2]</td>
-					</tr>
-					<tr>
-						<td>$row_Event3_ID[3]</td>
-						<td>$row_Sensor3_ID[3]</td>
-						<td>$row_Sensor3_Value[3]</td>
-						<td>$row_CurrentTime3[3]</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<table class='container'>
-				<thead>
-					<tr>
-						<th><h1>Action ID</h1></th>
-						<th><h1>Action Event</h1></th>
-						<th><h1>Action value</h1></th>
-						<th><h1>Time</h1></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>$row_Action_ID[0]</td>
-						<td>$row_Action_Event[0]</td>
-						<td>$row_Action_Value[0]</td>
-						<td>$row_ActionTime[0]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[1]</td>
-						<td>$row_Action_Event[1]</td>
-						<td>$row_Action_Value[1]</td>
-						<td>$row_ActionTime[1]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[2]</td>
-						<td>$row_Action_Event[2]</td>
-						<td>$row_Action_Value[2]</td>
-						<td>$row_ActionTime[2]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[3]</td>
-						<td>$row_Action_Event[3]</td>
-						<td>$row_Action_Value[3]</td>
-						<td>$row_ActionTime[3]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[4]</td>
-						<td>$row_Action_Event[4]</td>
-						<td>$row_Action_Value[4]</td>
-						<td>$row_ActionTime[4]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[5]</td>
-						<td>$row_Action_Event[5]</td>
-						<td>$row_Action_Value[5]</td>
-						<td>$row_ActionTime[5]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[6]</td>
-						<td>$row_Action_Event[6]</td>
-						<td>$row_Action_Value[6]</td>
-						<td>$row_ActionTime[6]</td>
-					</tr>
-					<tr>
-						<td>$row_Action_ID[7]</td>
-						<td>$row_Action_Event[7]</td>
-						<td>$row_Action_Value[7]</td>
-						<td>$row_ActionTime[7]</td>
-					</tr>
-				</tbody>
-			</table>
+			</head>";
+			echo "
+				<body>
+					<h1> <span class='yellow'></pan></h1>
+					<h2>Monitor & Control Panel</h2>
+					<table class='container'>
+						<thead>
+							<tr>
+								<th><h1>Event ID</h1></th>
+								<th><h1>Sensor ID</h1></th>
+								<th><h1>Sensor Value</h1></th>
+								<th><h1>Time</h1></th>
+							</tr>
+						</thead>
+				<tbody>";
 			
-			<div id='smallbudy' class='relative' style='width:300px; height:400px'></div>
-			<div id='smallbudy1' class='relative1' style='width:300px; height:400px'></div>
-
+			for ($i = 0; $i < 13; $i++) {
+				$htmlElement = "
+							<tr>
+								<td>$row_Event_ID[$i]</td>
+								<td>$row_Sensor_ID[$i]</td>
+								<td>$row_Sensor_Value[$i]</td>
+								<td>$row_CurrentTime[$i]</td>
+							</tr>";
+				echo $htmlElement;
+			}
+			echo "</tbody>
+			</table>";
+			echo "
+				<table class='container'>
+					<thead>
+						<tr>
+							<th><h1>Event ID</h1></th>
+							<th><h1>Sensor ID</h1></th>
+							<th><h1>Sensor Value</h1></th>
+							<th><h1>Time</h1></th>
+						</tr>
+					</thead>
+					<tbody>";
+			for ($i = 0; $i < 4; $i++) {
+				$htmlElement = "
+							<tr>
+								<td>$row_Event3_ID[$i]</td>
+								<td>$row_Sensor3_ID[$i]</td>
+								<td>$row_Sensor3_Value[$i]</td>
+								<td>$row_CurrentTime3[$i]</td>
+							</tr>";
+				echo $htmlElement;
+			}
+			echo "</tbody>
+			</table>";
+			echo "
+				<table class='container'>
+					<thead>
+						<tr>
+							<th><h1>Action ID</h1></th>
+							<th><h1>Action Event</h1></th>
+							<th><h1>Action value</h1></th>
+							<th><h1>Time</h1></th>
+						</tr>
+					</thead>
+					<tbody>";
 			
-			<button class='button button1' ><a color: #2c87f0; href=pump1.php>Toggle Pump 1</button>
-			<button class='button button2' ><a href=pump2.php>Toggle Pump 2</button>
-			<button class='button button3' ><a href=pump3.php>Toggle Pump 3</button>
+			for ($i = 0; $i < 8; $i++) {
+				$htmlElement = "
+							<tr>
+								<td>$row_Action_ID[0]</td>
+								<td>$row_Action_Event[0]</td>
+								<td>$row_Action_Value[0]</td>
+								<td>$row_ActionTime[0]</td>
+							</tr>";
+				echo $htmlElement;
+			}
+			echo "</tbody>
+			</table>";
+			echo "
+				<div id='smallbudy' class='relative' style='width:300px; height:400px'></div>
+				<div id='smallbudy1' class='relative1' style='width:300px; height:400px'></div>
+				<button class='button button1' ><a color: #2c87f0; href=pump1.php>Toggle Pump 1</button>
+				<button class='button button2' ><a href=pump2.php>Toggle Pump 2</button>
+				<button class='button button3' ><a href=pump3.php>Toggle Pump 3</button>
 				<script>
-					
 					var T = new JustGage({
 						id: 'smallbudy',
 						value:$temp,
@@ -435,7 +318,6 @@
 						max: 500,
 						title: 'Temperature'
 					});
-
 					var H= new JustGage({
 						id: 'smallbudy1',
 						value:$light,
@@ -443,7 +325,7 @@
 						max: 1000,
 						title: 'Light'
 					});
-				</script>"
+				</script>";
 			?>
 		</body>
 </html>
