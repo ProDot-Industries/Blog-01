@@ -14,10 +14,7 @@ def action(msg):
 
 telegram_bot = telepot.Bot(token)
 print (telegram_bot.getMe())
-
 MessageLoop(telegram_bot, action).run_as_thread()
-print 'Up and Running....'
-
 while 1:
     time.sleep(10)
-
+    print 'Up and Running....'

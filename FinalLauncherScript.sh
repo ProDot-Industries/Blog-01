@@ -18,4 +18,4 @@ do
     sleep 1
 done
 echo "exit"
-echo "PiPassword" | sudo -S reboot now
+echo "raspberryPi" | sudo -S reboot now

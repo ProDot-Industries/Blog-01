@@ -26,7 +26,7 @@ int HCSE[] = {5,0,14,13};
 int dbip[] = {0,0,0,0};
 //Variables for WiFi Connection
 int statusCode;
-const char* ssid = "nodeMCU ESP8266";
+const char* ssid = "nodeMCU ESP8266 Security";
 const char* passphrase = "";
 String st;
 String content;

@@ -15,7 +15,7 @@ camera = picamera.PiCamera()
 location = "/home/pi/project/captured/%s_video.h264"
 
 #telegram chat id
-chat_id = 123456789
+chat_id = ********
 #telegram bot token 
 telegramToken = 'enter your token here'
 
@@ -54,7 +54,7 @@ def sqlReaderWriter():
     sql1 = "SELECT * FROM ActionTable WHERE `Action ID` > 6005 AND `Action ID` < 8000"
     sql2 = "UPDATE ActionTable SET `Action Value` = 1 WHERE `Action ID` = 8001"
     sql3 = "UPDATE ActionTable SET `Action Value` = 0 WHERE `Action ID` = 8001"
-    sql4 = "UPDATE ActionTable SET `Action Value` = 0 WHERE `Action ID` = 7001"
+    sql4 = "UPDATE ActionTable SET `Action Value` = 0 WHERE `Action ID` = "
     cur.execute (sql1)
     for row in cur.fetchall():
         print (str(row[0])+" "+str(row[1])+" "+str(row[2])+" "+str(row[3]))
@@ -65,6 +65,7 @@ def sqlReaderWriter():
             db.commit()
             captureSendCopy()
             cur.execute (sql3)
+            sql4 = sql4 + str(row[0])
             cur.execute (sql4)
             db.commit()
 try:
