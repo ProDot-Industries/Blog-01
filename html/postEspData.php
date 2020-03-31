@@ -9,7 +9,6 @@
             $SensorID = test_input($_POST["SensorID"]);
             $SensorValue = test_input($_POST["SensorValue"]);
 
-
             if ($db->connect_error) {
                 die("connection failed" . $db->connect_error);
             }
